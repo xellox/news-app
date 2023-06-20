@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans;
+}
+
+body{
+    background-color: rgb(40, 40, 40);
+}
+
+/* center icons from reactIcons */
+svg{
+    margin-top:10px;
+    cursor: pointer;
+}
+
+/* top navbar css */
+.navbar-container{
+    width: 100vw;
+    height: 50px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    color:wheat;
+    font-size:22px;
+    padding: 20px;
+}
+
+.right-wrap{
+    display:flex;
+    align-items: center;
+    gap:15px;
+}
+
+/* sidenav css */
+
+.sidenav-container{
+    background-color: blueviolet;
+    display:none;
+    
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    animation: slide 0.3s ease-in-out;
+}
+
+.sidenav-container.open{
+    display:flex;
+}
+
+.sidenav-elements{
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+@keyframes slide {
+    0%{
+        margin-left:-250px;
+        opacity: 0;
+    }
+    100%{
+        margin-left:0;
+        opacity: 1;
+    }
+}

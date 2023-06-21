@@ -11,7 +11,8 @@ body{
 
 /* center icons from reactIcons */
 svg{
-    margin-top:10px;
+    display:flex;
+    margin-top:5px;
     cursor: pointer;
 }
 
@@ -20,27 +21,51 @@ svg{
     width: 100vw;
     height: 50px;
     display:flex;
+    position: fixed;
+    top:0;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     background-color: black;
     color:wheat;
-    font-size:22px;
+    font-size:24px;
     padding: 20px;
 }
 
-.right-wrap{
+.right-wrap,
+.left-wrap{
     display:flex;
     align-items: center;
+    text-align: center;
     gap:15px;
 }
 
+/*search-bar*/
+
+.searchbar-input{
+    top:50px;
+    display:none;
+    position: fixed;
+    width: 100vw;
+    height: 40px;
+    padding: 7px;
+    font-size: 16px;
+    text-align:center;
+    outline: 0;
+    background-color: rgb(201, 201, 201);
+    border:0px;
+}
+
+.searchbar-input.open{
+    display:flex;
+}
 /* sidenav css */
 
 .sidenav-container{
     background-color: blueviolet;
     display:none;
-    
+    position: fixed;
+    top:50px;
     flex-direction: column;
     width: 250px;
     height: 100vh;
@@ -55,7 +80,7 @@ svg{
     padding: 15px;
     border-bottom: 1px solid black;
 }
-
+/* slide animation for sidenav */
 @keyframes slide {
     0%{
         margin-left:-250px;
@@ -65,4 +90,31 @@ svg{
         margin-left:0;
         opacity: 1;
     }
+}
+
+/* dispalying news as cards*/
+
+.news-grid-wrapper{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, clamp(300px, 40vw, 450px));
+    grid-gap:50px;
+    margin-top:100px;
+  
+}
+
+.news-grid{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    background-color: rgba(0, 0, 0, 0.505);
+    height: clamp(250px,40vw, 300px);
+    color:white;
+  
+}
+
+.news-image{
+    width:clamp(300px,40vw, 450px);
+    height: 200px;
 }

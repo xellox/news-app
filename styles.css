@@ -1,3 +1,6 @@
+:root{
+    --red-color: #f30f26;
+}
 *{
     margin:0;
     padding: 0;
@@ -12,7 +15,6 @@ body{
 /* center icons from reactIcons */
 svg{
     display:flex;
-    margin-top:5px;
     cursor: pointer;
 }
 
@@ -28,8 +30,9 @@ svg{
     text-align: center;
     background-color: black;
     color:wheat;
-    font-size:24px;
-    padding: 20px;
+    font-size:22px;
+    padding: 10px;
+    z-index:5;
 }
 
 .right-wrap,
@@ -37,32 +40,40 @@ svg{
     display:flex;
     align-items: center;
     text-align: center;
-    gap:15px;
+    gap:10px;
 }
 
 /*search-bar*/
 
 .searchbar-input{
-    top:50px;
-    display:none;
-    position: fixed;
-    width: 100vw;
-    height: 40px;
+    display:flex;
+    height: 30px;
+    border-radius: 10px;
+    width:clamp(100px,40vw, 400px);
     padding: 7px;
-    font-size: 16px;
+    font-size: 14px;
     text-align:center;
     outline: 0;
     background-color: rgb(201, 201, 201);
     border:0px;
+    animation: drop 0.2s ease-in;
 }
 
-.searchbar-input.open{
-    display:flex;
+@keyframes drop {
+    0%{
+        top:0px;
+        opacity: 0;
+    }
+
+    100%{
+        top:50px;
+        opacity: 1;
+    }
 }
 /* sidenav css */
 
 .sidenav-container{
-    background-color: blueviolet;
+    background-color: var(--red-color);
     display:none;
     position: fixed;
     top:50px;
@@ -70,6 +81,7 @@ svg{
     width: 250px;
     height: 100vh;
     animation: slide 0.3s ease-in-out;
+    z-index:4;
 }
 
 .sidenav-container.open{
@@ -78,7 +90,15 @@ svg{
 
 .sidenav-elements{
     padding: 15px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(162, 162, 162);
+    cursor: pointer;
+    color:White;
+    text-transform: uppercase;
+}
+
+.sidenav-elements:hover{
+    padding:15px 15px 15px 25px;
+    transition: padding 0.1s ease-in;
 }
 /* slide animation for sidenav */
 @keyframes slide {
@@ -93,28 +113,96 @@ svg{
 }
 
 /* dispalying news as cards*/
-
 .news-grid-wrapper{
     display:grid;
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(auto-fit, clamp(300px, 40vw, 450px));
     grid-gap:50px;
-    margin-top:100px;
+    margin-top:50px;
   
 }
 
 .news-grid{
     display:flex;
     flex-direction: column;
-    gap:10px;
     background-color: rgba(0, 0, 0, 0.505);
-    height: clamp(250px,40vw, 300px);
+    height: clamp(250px,33vw, 300px);
     color:white;
   
 }
 
 .news-image{
     width:clamp(300px,40vw, 450px);
-    height: 200px;
+    height: clamp(150px,25vw, 200px);
+}
+
+.author{
+    display:flex;
+    position: absolute;
+    margin:10px;
+    border-left:3px solid var(--red-color);
+    padding-left:10px;
+    color:rgb(190, 190, 190);
+}
+.news-title{
+    font-size:15px;
+   padding:5px;
+}
+
+.news-description{
+    font-size: 13px;
+    color:rgb(100, 100, 100);
+    padding-left: 5px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+
+.news-grid a{
+    height: clamp(250px,33vw, 300px);
+    width:clamp(300px,40vw, 450px);
+    background-color: rgba(0, 0, 0, 0.75);
+    display:flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    gap:5px;
+    cursor:pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+    color:rgb(200, 200, 200);
+}
+
+.news-grid a:hover{
+    opacity: 1;
+}
+
+
+
+h2{
+    color:white;
+    display:flex;
+
+}
+
+.news-section{
+    margin-top:100px;
+}
+.title{
+    display:flex;
+    position: relative;
+    justify-content: center;
+}
+
+@media (max-width:1000px){
+    .news-title{
+        font-size:12px;
+    }
+    
+    .news-description{
+        font-size: 10px;
+    }
 }

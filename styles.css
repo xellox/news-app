@@ -119,8 +119,7 @@ svg{
     align-items: center;
     grid-template-columns: repeat(auto-fit, clamp(300px, 40vw, 450px));
     grid-gap:50px;
-    margin-top:50px;
-  
+    margin-top:50px; 
 }
 
 .news-grid{
@@ -129,7 +128,8 @@ svg{
     background-color: rgba(0, 0, 0, 0.505);
     height: clamp(250px,33vw, 300px);
     color:white;
-  
+    animation: reloadNews 0.2s ease-in;
+    box-shadow: 2px 2px 10px 0px black;
 }
 
 .news-image{
@@ -195,6 +195,18 @@ h2{
     display:flex;
     position: relative;
     justify-content: center;
+}
+
+@keyframes reloadNews {
+    0%{
+        opacity: 0;
+        margin-left:5px;
+    }
+
+    100%{
+        opacity:1;
+        margin-left:0;
+    }
 }
 
 @media (max-width:1000px){

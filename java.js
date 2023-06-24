@@ -54,7 +54,7 @@ async function fetchData(type, value) {
         "https://newsapi.org/v2/top-headlines?category=" +
         value +
         "&language=en&pageSize=12&sortBy=popularity&apiKey=87e15d6c747c4558b1083376e977ff87";
-      fetchTitle = `TOP NEWS IN ${value}`;
+      fetchTitle = `TOP NEWS IN ${value.toUpperCase()}`;
       break;
 
     case "search":
@@ -62,7 +62,7 @@ async function fetchData(type, value) {
         "   https://newsapi.org/v2/everything?q=" +
         value +
         "&pageSize=12&apiKey=87e15d6c747c4558b1083376e977ff87";
-      fetchTitle = `TOP NEWS RELATED TO ${value}`;
+      fetchTitle = `TOP NEWS RELATED TO ${value.toUpperCase()}`;
       break;
     default:
       return;

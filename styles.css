@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(24, 24, 24)
 }
 
 /* center icons from reactIcons */
@@ -28,7 +28,7 @@ svg{
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: black;
+    background-color: #0B032D;
     color:wheat;
     font-size:22px;
     padding: 10px;
@@ -54,7 +54,7 @@ svg{
     font-size: 14px;
     text-align:center;
     outline: 0;
-    background-color: rgb(201, 201, 201);
+    background-color: #D1C5FC;
     border:0px;
     animation: drop 0.2s ease-in;
 }
@@ -195,6 +195,8 @@ h2{
     display:flex;
     position: relative;
     justify-content: center;
+    color:white;
+    font-size: clamp(1rem, 0.8269rem + 0.9231vw, 1.75rem);
 }
 
 @keyframes reloadNews {
